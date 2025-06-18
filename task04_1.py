@@ -21,5 +21,9 @@ def total_salary(path):
         average = total // i
     return total, average
 
-total, average = total_salary("salary.txt")
-print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+file_name = Path("salary.txt")
+if file_name.exists():
+    total, average = total_salary(file_name)
+    print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+else: 
+    print("file not found")
