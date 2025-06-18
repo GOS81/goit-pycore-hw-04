@@ -12,12 +12,15 @@ def total_salary(path):
         total = 0
         while True:
             line = file.readline()
-            salary = re.search(r"\d+", line)
             if not line:
                 break
-            salary = int(salary.group())
-            total = total + salary
-            i += 1
+            try:
+                salary = re.search(r"\d+", line)
+                salary = int(salary.group())
+                total = total + salary
+                i += 1
+            except:
+                print("damaged file")
         average = total // i
     return total, average
 
