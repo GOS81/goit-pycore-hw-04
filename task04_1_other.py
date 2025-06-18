@@ -11,10 +11,13 @@ def total_salary(path):
         salary_array = []
         while True:
             line = file.readline()
-            salary = re.split(",", line.strip())
             if not line:
                 break
-            salary_array.append(int(salary[1]))
+            try:
+                salary = re.split(",", line.strip())
+                salary_array.append(int(salary[1]))
+            except:
+                print("damaged file")
         total = sum(salary_array)
         average = total // len(salary_array)
     return total, average
