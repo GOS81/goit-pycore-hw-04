@@ -10,6 +10,9 @@ def parse_input(input_command):
     if cmd == "hello":
         print("Чим я можу вам допомогти?")
 
+    elif cmd == "help":
+        print("Введіть одну з команд: hello, add, change, show, all, exit or close")
+    
     elif cmd == "close" or cmd == "exit":
         print("Ви залишаєте додаток! \nГарного дня!")
         return exit()
